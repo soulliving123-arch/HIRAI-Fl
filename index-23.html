@@ -296,9 +296,9 @@
     transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease;
   }
 
-  .venn-enter-a { transform: translate(0, -70px) scale(0.85); }
-  .venn-enter-b { transform: translate(70px, 0) scale(0.85); }
-  .venn-enter-c { transform: translate(0, 70px) scale(0.85); }
+  .venn-enter-a { transform: translate(-70px, 0) scale(0.85); }
+  .venn-enter-b { transform: translate(0, -70px) scale(0.85); }
+  .venn-enter-c { transform: translate(70px, 0) scale(0.85); }
 
   .venn-section.in-view .venn-enter {
     opacity: 1;
@@ -777,29 +777,29 @@
 <section class="venn-section" id="venn-section">
   <div class="wrap">
     <div class="venn-wrap">
-      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"
+      <svg viewBox="0 0 360 250" xmlns="http://www.w3.org/2000/svg"
            role="img" aria-label="感性・人間力・技術が重なり合い、成長を生み出すことを示す図">
         <g class="venn-enter venn-enter-a">
           <g class="venn-circle venn-a">
-            <circle cx="125" cy="100" r="90"></circle>
-            <text x="235" y="95" class="venn-label">感性</text>
+            <circle cx="95" cy="125" r="90"></circle>
+            <text x="95" y="230" class="venn-label">感性</text>
           </g>
         </g>
         <g class="venn-enter venn-enter-b">
           <g class="venn-circle venn-b">
-            <circle cx="125" cy="185" r="90"></circle>
-            <text x="235" y="180" class="venn-label">技術</text>
+            <circle cx="180" cy="125" r="90"></circle>
+            <text x="180" y="230" class="venn-label">技術</text>
           </g>
         </g>
         <g class="venn-enter venn-enter-c">
           <g class="venn-circle venn-c">
-            <circle cx="125" cy="270" r="90"></circle>
-            <text x="235" y="265" class="venn-label">人間力</text>
+            <circle cx="265" cy="125" r="90"></circle>
+            <text x="265" y="230" class="venn-label">人間力</text>
           </g>
         </g>
         <g class="venn-center-group">
-          <circle cx="125" cy="185" r="26" class="venn-center-bg"></circle>
-          <text x="125" y="190" class="venn-center-text">成長</text>
+          <circle cx="180" cy="125" r="26" class="venn-center-bg"></circle>
+          <text x="180" y="130" class="venn-center-text">成長</text>
         </g>
       </svg>
     </div>
