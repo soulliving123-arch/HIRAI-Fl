@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石田潤尉 フルート教室 | 大分・個人レッスン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-ivory: #F7F3EC;
+    --color-ivory-deep: #EFE9DD;
+    --color-charcoal: #1E2430;
+    --color-charcoal-soft: #4C5566;
+    --color-navy: #1F3A5C;
+    --color-gold: #B08D57;
+    --font-display: 'Shippori Mincho', serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+    --max-width: 720px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* --- ヘッダー --- */
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(247, 243, 236, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.25);
+  }
+
+  .header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .brand {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+  }
+
+  .no-break { white-space: nowrap; }
+
+  .only-desktop { display: none; }
+
+  @media (min-width: 561px) {
+    .only-desktop { display: inline; }
+  }
+
+  @media (max-width: 560px) {
+    nav { display: none; }
+  }
+
+  /* --- 罫線装飾 --- */
+
+  .rule {
+    width: 60px;
+    height: 1px;
+    background: var(--color-gold);
+    margin: 28px auto;
+  }
+
+  .rule.left { margin-left: 0; }
+
+  /* --- ヒーロー --- */
+
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 28px 80px;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    color: var(--color-navy);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(30px, 6vw, 46px);
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    max-width: 14em;
+  }
+
+  .hero p.lead {
+    margin-top: 28px;
+    font-size: 15px;
+    color: var(--color-charcoal-soft);
+    max-width: 30em;
+  }
+
+  .hero .cta {
+    margin-top: 44px;
+    display: inline-block;
+    border: 1px solid var(--color-navy);
+    color: var(--color-navy);
+    padding: 14px 40px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .hero .cta:hover {
+    background: var(--color-navy);
+    color: var(--color-ivory);
+  }
+
+  .credential-badge {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 14px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--color-charcoal-soft);
+    border-top: 1px solid rgba(176, 141, 87, 0.4);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.4);
+    padding: 12px 20px;
+  }
+
+  .credential-badge span {
+    white-space: nowrap;
+  }
+
+  .credential-badge .dot {
+    color: var(--color-gold);
+  }
+
+  /* --- セクション共通 --- */
+
+  section {
+    padding: 100px 0;
+  }
+
+  section.alt {
+    background: var(--color-ivory-deep);
+  }
+
+  .section-head {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .section-head .eyebrow {
+    font-size: 12px;
+    color: var(--color-gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(24px, 4vw, 30px);
+    letter-spacing: 0.05em;
+  }
+
+  /* --- 指導方針(哲学) --- */
+
+  .philosophy {
+    padding: 120px 0;
+    text-align: center;
+  }
+
+  .philosophy-lead {
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--color-charcoal-soft);
+    margin-bottom: 28px;
+  }
+
+  .philosophy-main {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(26px, 5vw, 38px);
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    color: var(--color-navy);
+    margin-bottom: 40px;
+  }
+
+  .philosophy-body {
+    font-size: 15px;
+    color: var(--color-charcoal-soft);
+    max-width: 30em;
+    margin: 0 auto;
+  }
+
+  /* --- 感性・人間力・技術 ベン図アニメーション --- */
+
+  .venn-section {
+    padding: 0 0 130px;
+    text-align: center;
+  }
+
+  .venn-caption {
+    font-size: 14px;
+    color: var(--color-charcoal-soft);
+    max-width: 26em;
+    margin: 40px auto 0;
+  }
+
+  .venn-wrap {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .venn-circle circle {
+    mix-blend-mode: multiply;
+    opacity: 0.62;
+  }
+
+  .venn-a circle { fill: #B98596; }
+  .venn-b circle { fill: var(--color-gold); }
+  .venn-c circle { fill: var(--color-navy); }
+
+  .venn-label {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    fill: var(--color-charcoal);
+    text-anchor: middle;
+  }
+
+  .venn-center-bg {
+    fill: var(--color-ivory);
+    opacity: 0.9;
+  }
+
+  .venn-center-text {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    fill: var(--color-navy);
+    text-anchor: middle;
+    letter-spacing: 0.1em;
+  }
+
+  .venn-a { animation: venn-float-a 7.5s ease-in-out infinite; }
+  .venn-b { animation: venn-float-b 8.5s ease-in-out infinite; }
+  .venn-c { animation: venn-float-c 9.5s ease-in-out infinite; }
+  .venn-center-group { animation: venn-pulse 4.5s ease-in-out infinite; }
+
+  @keyframes venn-float-a {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(5px, -7px); }
+  }
+  @keyframes venn-float-b {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-6px, -5px); }
+  }
+  @keyframes venn-float-c {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(2px, 8px); }
+  }
+  @keyframes venn-pulse {
+    0%, 100% { opacity: 0.88; }
+    50% { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .venn-a, .venn-b, .venn-c, .venn-center-group {
+      animation: none;
+    }
+  }
+
+  /* --- プロフィール --- */
+
+  .profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, #DDD3C0, #B08D57 130%);
+    margin: 0 auto 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    color: var(--color-ivory);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+
+  .profile-name {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .profile-name-en {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--color-gold);
+    margin-bottom: 14px;
+  }
+
+  .profile-title {
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-charcoal-soft);
+    margin-bottom: 36px;
+  }
+
+  .profile-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 460px;
+    margin: 0 auto 44px;
+    padding: 24px 0;
+    border-top: 1px solid rgba(176, 141, 87, 0.3);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.3);
+  }
+
+  .profile-meta-item {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .profile-meta-label {
+    flex-shrink: 0;
+    width: 8.5em;
+    color: var(--color-gold);
+    letter-spacing: 0.05em;
+  }
+
+  .profile-meta-value {
+    color: var(--color-charcoal-soft);
+  }
+
+  .profile-bio p {
+    margin-bottom: 22px;
+    font-size: 15px;
+  }
+
+  .profile-bio p:last-child { margin-bottom: 0; }
+
+  /* --- 演奏動画 --- */
+
+  .video-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    background: var(--color-navy);
+    overflow: hidden;
+  }
+
+  .video-embed iframe,
+  .video-embed video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .video-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--color-ivory);
+  }
+
+  .video-placeholder .play-icon {
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(247, 243, 236, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+  }
+
+  .video-placeholder .label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgba(247, 243, 236, 0.75);
+  }
+
+  .video-caption {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-charcoal-soft);
+  }
+
+  /* --- 選ばれる理由 --- */
+
+  .diff-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .diff-item {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(176, 141, 87, 0.3);
+    display: flex;
+    gap: 20px;
+  }
+
+  .diff-item:first-child {
+    border-top: 1px solid rgba(176, 141, 87, 0.3);
+  }
+
+  .diff-numeral {
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--color-gold);
+    line-height: 1.5;
+  }
+
+  .diff-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-navy);
+    margin-bottom: 10px;
+  }
+
+  .diff-desc {
+    font-size: 14px;
+    color: var(--color-charcoal-soft);
+    max-width: 34em;
+  }
+
+  /* --- レッスン内容・料金 --- */
+
+  .lesson-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .lesson-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(176, 141, 87, 0.3);
+    gap: 24px;
+  }
+
+  .lesson-item:first-child {
+    border-top: 1px solid rgba(176, 141, 87, 0.3);
+  }
+
+  .lesson-name {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .lesson-desc {
+    font-size: 13px;
+    color: var(--color-charcoal-soft);
+    margin-top: 6px;
+    max-width: 32em;
+  }
+
+  .lesson-price {
+    font-family: var(--font-display);
+    font-size: 17px;
+    white-space: nowrap;
+    color: var(--color-navy);
+  }
+
+  .lesson-note {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--color-charcoal-soft);
+  }
+
+  /* --- 生徒の声 --- */
+
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .testimonial {
+    text-align: center;
+    max-width: 30em;
+    margin: 0 auto;
+    padding: 8px 0 0;
+    border-top: 1px solid rgba(176, 141, 87, 0.35);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.35);
+    padding-bottom: 32px;
+  }
+
+  .testimonial .mark {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 46px;
+    line-height: 1;
+    color: var(--color-gold);
+    margin: -6px 0 4px;
+  }
+
+  .testimonial .quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.03em;
+  }
+
+  .testimonial .who {
+    display: block;
+    margin-top: 20px;
+    font-size: 11px;
+    color: var(--color-charcoal-soft);
+    letter-spacing: 0.2em;
+  }
+
+  /* --- 体験レッスン予約 --- */
+
+  .form-group {
+    margin-bottom: 24px;
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--color-charcoal-soft);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(43, 37, 33, 0.25);
+    padding: 10px 2px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--color-charcoal);
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-navy);
+  }
+
+  textarea { resize: vertical; min-height: 90px; }
+
+  .submit-btn {
+    margin-top: 12px;
+    width: 100%;
+    background: var(--color-navy);
+    color: var(--color-ivory);
+    border: none;
+    padding: 16px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .submit-btn:hover { background: #142943; }
+
+  .form-note {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--color-charcoal-soft);
+    text-align: center;
+  }
+
+  /* --- フッター --- */
+
+  footer {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  footer .brand {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  footer .footer-en {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--color-gold);
+    margin-bottom: 20px;
+  }
+
+  footer .contact-line {
+    font-size: 13px;
+    color: var(--color-charcoal-soft);
+    margin-bottom: 4px;
+  }
+
+  footer .copyright {
+    margin-top: 28px;
+    font-size: 11px;
+    color: rgba(43, 37, 33, 0.4);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">HIRAI Fl.</div>
+    <nav>
+      <a href="#philosophy">指導方針</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#difference">選ばれる理由</a>
+      <a href="#video">演奏動画</a>
+      <a href="#lesson">レッスン</a>
+      <a href="#voice">生徒の声</a>
+      <a href="#trial">体験レッスン</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">OITA FLUTE LESSON</div>
+  <h1>確かな技術で、<br>次のステージへ。</h1>
+  <p class="lead">
+    コンクール入賞、そして着実な上達を目指す<span class="no-break">中学生・高校生</span>のための<br class="only-desktop">
+    フルート個人レッスンを大分県内にて開講しています。
+  </p>
+  <a href="#trial" class="cta">体験レッスンを予約する</a>
+  <div class="credential-badge">
+    <span>武蔵野音楽大学卒業</span>
+    <span class="dot">●</span>
+    <span>学内最上位評価でオーケストラ奏者に選出</span>
+  </div>
+</section>
+
+<section class="philosophy" id="philosophy">
+  <div class="wrap">
+    <p class="philosophy-lead">技術を伸ばすことは、当たり前。</p>
+    <h2 class="philosophy-main">フルートを通じて、<br>人間力を高める。</h2>
+    <p class="philosophy-body">
+      集中力、粘り強さ、人前で表現する勇気——これらは、真摯に音楽と向き合えば
+      自然と育つもの。石田の指導が目指すのは、その先です。「本物の基準」を伝える
+      ことと、唯一無二の指導法で、生徒の感性をひらき、潜在的な能力を引き出すため、
+      最短でもう一段上の景色へ導きます。
+    </p>
+    <div class="rule"></div>
+  </div>
+</section>
+
+<section class="venn-section">
+  <div class="wrap">
+    <div class="venn-wrap">
+      <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label="感性・人間力・技術が重なり合い、成長を生み出すことを示す図">
+        <g class="venn-circle venn-a">
+          <circle cx="120" cy="120" r="92"></circle>
+          <text x="80" y="62" class="venn-label">感性</text>
+        </g>
+        <g class="venn-circle venn-b">
+          <circle cx="200" cy="120" r="92"></circle>
+          <text x="240" y="62" class="venn-label">技術</text>
+        </g>
+        <g class="venn-circle venn-c">
+          <circle cx="160" cy="192" r="92"></circle>
+          <text x="160" y="268" class="venn-label">人間力</text>
+        </g>
+        <g class="venn-center-group">
+          <circle cx="160" cy="150" r="26" class="venn-center-bg"></circle>
+          <text x="160" y="155" class="venn-center-text">成長</text>
+        </g>
+      </svg>
+    </div>
+    <p class="venn-caption">
+      感性・人間力・技術。この3つが重なり合ったところに、
+      本当の意味での成長が生まれます。
+    </p>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">PROFILE</div>
+      <h2>講師プロフィール</h2>
+    </div>
+
+    <div class="profile-photo">【写真】</div>
+    <div class="profile-name">石田潤尉</div>
+    <div class="profile-name-en">HIRAI ISHIDA</div>
+    <div class="profile-title">フルート奏者 ／ 【出身音楽大学・専攻など】</div>
+
+    <div class="profile-meta">
+      <div class="profile-meta-item">
+        <span class="profile-meta-label">対応楽器</span>
+        <span class="profile-meta-value">フルート、ピッコロ、パーカッション、ピアノ</span>
+      </div>
+      <div class="profile-meta-item">
+        <span class="profile-meta-label">吹奏楽・マーチング</span>
+        <span class="profile-meta-value">パレコン・M響 などの指導実績</span>
+      </div>
+    </div>
+
+    <div class="profile-bio">
+      <p>
+        武蔵野音楽大学(フルート専攻)卒業。同大学は1929年創立、国立音楽大学・洗足学園音楽大学などと
+        並ぶ関東屈指の音楽大学で、中でも管楽器専修の実技教育に定評があります。在学中は宮下英司氏に師事。
+      </p>
+      <p>
+        武蔵野音楽大学では、4年次の学内成績評価が4段階に分かれており、最上位の評価を
+        得た学生のみが大学オーケストラの奏者として舞台に立つことができます。
+        石田潤尉はこの最上位評価を得て、実際にオーケストラの一員として演奏しました。
+        これは技術・音楽性ともに学年トップクラスと認められた証であり、
+        一般的なフルート講師とは学んできた深さが異なります。
+      </p>
+      <p>
+        【レッスンに対する想いを記載します。例:基礎の徹底から、コンクールで
+        評価される表現力まで、一人ひとりの目標に合わせて段階的に指導します。
+        中学・高校の吹奏楽部での個人レッスンにも数多く対応してきました。】
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="difference">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">DIFFERENCE</div>
+      <h2>選ばれる理由</h2>
+    </div>
+
+    <div class="diff-list">
+      <div class="diff-item">
+        <div class="diff-numeral">I</div>
+        <div>
+          <div class="diff-title">武蔵野音楽大学 卒業</div>
+          <div class="diff-desc">
+            1929年創立、関東屈指の音楽大学で専門教育を受けています。特に管楽器専修の
+            実技教育に定評があり、一般的な音楽教室出身の講師とは基礎の鍛えられ方が異なります。
+          </div>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-numeral">II</div>
+        <div>
+          <div class="diff-title">学内最上位評価でオーケストラ奏者に選出</div>
+          <div class="diff-desc">
+            武蔵野音楽大学の4年次成績評価は4段階。最上位の評価を得た学生のみが大学
+            オーケストラの奏者として舞台に立つことができ、実際にその一員として演奏した
+            実績があり、技術・音楽性が客観的に証明されています。
+          </div>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-numeral">III</div>
+        <div>
+          <div class="diff-title">中高生のコンクール指導に特化</div>
+          <div class="diff-desc">
+            吹奏楽部やコンクールを目指す<span class="no-break">中学生・高校生</span>の指導経験が豊富。学業と両立
+            しながら結果を出すための、無理のない練習設計にも精通しています。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="video">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">PERFORMANCE</div>
+      <h2>演奏動画</h2>
+    </div>
+
+    <div class="video-grid">
+      <div>
+        <div class="video-embed">
+          <!-- ここにYouTube等のiframeを埋め込みます。例:
+          <iframe src="https://www.youtube.com/embed/【動画ID】" allowfullscreen></iframe>
+          -->
+          <div class="video-placeholder">
+            <div class="play-icon">▶</div>
+            <div class="label">動画1</div>
+          </div>
+        </div>
+        <p class="video-caption">【曲名・演奏会名などのキャプション】</p>
+      </div>
+
+      <div>
+        <div class="video-embed">
+          <div class="video-placeholder">
+            <div class="play-icon">▶</div>
+            <div class="label">動画2</div>
+          </div>
+        </div>
+        <p class="video-caption">【レッスン風景・指導の様子など】</p>
+      </div>
+
+      <div>
+        <div class="video-embed">
+          <div class="video-placeholder">
+            <div class="play-icon">▶</div>
+            <div class="label">動画3</div>
+          </div>
+        </div>
+        <p class="video-caption">【生徒の演奏・コンクール結果など】</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lesson">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">LESSON &amp; PRICE</div>
+      <h2>レッスン内容・料金</h2>
+    </div>
+
+    <div class="lesson-list">
+      <div class="lesson-item">
+        <div>
+          <div class="lesson-name">基礎強化レッスン(60分)</div>
+          <div class="lesson-desc">音色・アンブシュア・ロングトーンなど、上達の土台を丁寧に見直します。</div>
+        </div>
+        <div class="lesson-price">¥【金額】</div>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <div class="lesson-name">コンクール対策レッスン(60分)</div>
+          <div class="lesson-desc">課題曲・自由曲の仕上げから、審査で評価される表現づくりまで指導します。</div>
+        </div>
+        <div class="lesson-price">¥【金額】</div>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <div class="lesson-name">吹奏楽部 個人強化レッスン(45分)</div>
+          <div class="lesson-desc">部活動と並行して通える時間設定。パート内での演奏力向上をサポートします。</div>
+        </div>
+        <div class="lesson-price">¥【金額】</div>
+      </div>
+      <div class="lesson-item">
+        <div>
+          <div class="lesson-name">体験レッスン(30分)</div>
+          <div class="lesson-desc">はじめての方も、他教室からの移籍もご相談ください。</div>
+        </div>
+        <div class="lesson-price">¥【金額】</div>
+      </div>
+    </div>
+
+    <p class="lesson-note">
+      ※ レッスンは【エリア・最寄り駅】のスタジオにて対面で行います。<br>
+      ※ 学校のテスト期間・大会日程に合わせた振替にも対応しています。
+    </p>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">VOICE</div>
+      <h2>生徒の声</h2>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <span class="mark">"</span>
+        <p class="quote">
+          【生徒様のコメントをここに記載します。例:音の出し方一つひとつを丁寧に
+          直していただき、県大会で初めて金賞をいただくことができました。】
+        </p>
+        <span class="who">【学年・受講歴 例:高校2年・受講2年】</span>
+      </div>
+      <div class="testimonial">
+        <span class="mark">"</span>
+        <p class="quote">
+          【生徒様のコメント例:自分の弱点が分からずに悩んでいましたが、
+          先生に教わってから練習の仕方そのものが変わりました。】
+        </p>
+        <span class="who">【学年・受講歴 例:中学3年・受講1年】</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="trial">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">TRIAL LESSON</div>
+      <h2>体験レッスンのお申し込み</h2>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <label for="name">お名前</label>
+        <input type="text" id="name" name="name" placeholder="山田 花子">
+      </div>
+      <div class="form-group">
+        <label for="email">メールアドレス</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com">
+      </div>
+      <div class="form-group">
+        <label for="experience">フルートのご経験</label>
+        <select id="experience" name="experience">
+          <option>はじめて</option>
+          <option>経験あり(ブランクあり)</option>
+          <option>経験あり(現在も演奏中)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">ご希望日時・ご質問など</label>
+        <textarea id="message" name="message" placeholder="ご希望の曜日・時間帯などご記入ください"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">この内容で送信する</button>
+      <p class="form-note">
+        通常2〜3日以内に、ご入力のメールアドレスへご返信いたします。
+      </p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">石田潤尉 Flute</div>
+  <div class="footer-en">HIRAI ISHIDA</div>
+  <div class="contact-line">〒【郵便番号】 【住所】</div>
+  <div class="contact-line">Mail: 【メールアドレス】　Instagram: 【@アカウント】</div>
+  <div class="copyright">© 2026 Hirai Ishida Flute Lesson. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
