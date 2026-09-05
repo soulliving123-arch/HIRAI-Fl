@@ -8,8 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --color-ivory: #F7F3EC;
-    --color-ivory-deep: #EFE9DD;
+    --color-ivory: #FFFFFF;
+    --color-ivory-deep: #FFFFFF;
     --color-charcoal: #1E2430;
     --color-charcoal-soft: #4C5566;
     --color-navy: #1F3A5C;
@@ -183,7 +183,9 @@
   }
 
   section.alt {
-    background: var(--color-ivory-deep);
+    background: var(--color-ivory);
+    border-top: 1px solid rgba(176, 141, 87, 0.25);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.25);
   }
 
   .section-head {
@@ -257,24 +259,26 @@
 
   .venn-circle circle {
     mix-blend-mode: multiply;
-    opacity: 0.62;
+    opacity: 0.85;
+    stroke: #FFFFFF;
+    stroke-width: 2;
   }
 
-  .venn-a circle { fill: #B98596; }
-  .venn-b circle { fill: var(--color-gold); }
-  .venn-c circle { fill: var(--color-navy); }
+  .venn-a circle { fill: #DDC4BE; } /* Rose Ash (明るめ) */
+  .venn-b circle { fill: #C7AC91; } /* Sandalwood */
+  .venn-c circle { fill: #C9C9AF; } /* Sage (明るめ) */
 
   .venn-label {
     font-family: var(--font-display);
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     fill: var(--color-charcoal);
     text-anchor: middle;
   }
 
   .venn-center-bg {
     fill: var(--color-ivory);
-    opacity: 0.9;
+    opacity: 0.95;
   }
 
   .venn-center-text {
@@ -286,49 +290,81 @@
     letter-spacing: 0.1em;
   }
 
+  /* 登場アニメーション:外側の入れ物を、離れた位置から中央へ集める */
+  .venn-enter {
+    opacity: 0;
+    transition: transform 1.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease;
+  }
+
+  .venn-enter-a { transform: translate(0, -70px) scale(0.85); }
+  .venn-enter-b { transform: translate(70px, 0) scale(0.85); }
+  .venn-enter-c { transform: translate(0, 70px) scale(0.85); }
+
+  .venn-section.in-view .venn-enter {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  .venn-section.in-view .venn-enter-a { transition-delay: 0s; }
+  .venn-section.in-view .venn-enter-b { transition-delay: 0.15s; }
+  .venn-section.in-view .venn-enter-c { transition-delay: 0.3s; }
+
+  .venn-center-group {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    transition-delay: 1.3s;
+  }
+
+  .venn-section.in-view .venn-center-group {
+    opacity: 1;
+  }
+
+  /* 到着後の、ゆったりとした呼吸のような動き */
   .venn-a { animation: venn-float-a 7.5s ease-in-out infinite; }
   .venn-b { animation: venn-float-b 8.5s ease-in-out infinite; }
   .venn-c { animation: venn-float-c 9.5s ease-in-out infinite; }
-  .venn-center-group { animation: venn-pulse 4.5s ease-in-out infinite; }
+  .venn-section.in-view .venn-center-group { animation: venn-pulse 4.5s ease-in-out infinite 1.3s; }
 
   @keyframes venn-float-a {
     0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(5px, -7px); }
+    50% { transform: translate(8px, -10px); }
   }
   @keyframes venn-float-b {
     0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(-6px, -5px); }
+    50% { transform: translate(-9px, -8px); }
   }
   @keyframes venn-float-c {
     0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(2px, 8px); }
+    50% { transform: translate(3px, 11px); }
   }
   @keyframes venn-pulse {
-    0%, 100% { opacity: 0.88; }
+    0%, 100% { opacity: 0.9; }
     50% { opacity: 1; }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .venn-a, .venn-b, .venn-c, .venn-center-group {
-      animation: none;
+    .venn-a, .venn-b, .venn-c { animation: none; }
+    .venn-section.in-view .venn-center-group { animation: none; }
+    .venn-enter {
+      transition: opacity 0.6s ease;
+      transform: none !important;
     }
   }
 
   /* --- プロフィール --- */
 
-  .profile-photo {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: linear-gradient(160deg, #DDD3C0, #B08D57 130%);
+  .profile-photo-frame {
+    width: 260px;
+    max-width: 70%;
     margin: 0 auto 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    color: var(--color-ivory);
-    font-size: 13px;
-    letter-spacing: 0.1em;
+    padding: 10px;
+    border: 1px solid var(--color-gold);
+  }
+
+  .profile-photo {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .profile-name {
@@ -373,7 +409,7 @@
 
   .profile-meta-label {
     flex-shrink: 0;
-    width: 8.5em;
+    width: 6em;
     color: var(--color-gold);
     letter-spacing: 0.05em;
   }
@@ -388,6 +424,10 @@
   }
 
   .profile-bio p:last-child { margin-bottom: 0; }
+
+  .profile-bio-highlight {
+    color: var(--color-gold);
+  }
 
   /* --- 演奏動画 --- */
 
@@ -489,6 +529,25 @@
     font-size: 14px;
     color: var(--color-charcoal-soft);
     max-width: 34em;
+  }
+
+  .diff-photo-frame {
+    margin-top: 24px;
+    padding: 8px;
+    border: 1px solid var(--color-gold);
+  }
+
+  .diff-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .diff-photo-caption {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--color-charcoal-soft);
+    letter-spacing: 0.05em;
   }
 
   /* --- レッスン内容・料金 --- */
@@ -635,6 +694,14 @@
     text-align: center;
   }
 
+  .school-intro {
+    font-size: 15px;
+    color: var(--color-charcoal-soft);
+    max-width: 34em;
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+
   /* --- フッター --- */
 
   footer {
@@ -675,15 +742,6 @@
 <header>
   <div class="header-inner">
     <div class="brand">HIRAI Fl.</div>
-    <nav>
-      <a href="#philosophy">指導方針</a>
-      <a href="#profile">プロフィール</a>
-      <a href="#difference">選ばれる理由</a>
-      <a href="#video">演奏動画</a>
-      <a href="#lesson">レッスン</a>
-      <a href="#voice">生徒の声</a>
-      <a href="#trial">体験レッスン</a>
-    </nav>
   </div>
 </header>
 
@@ -708,7 +766,7 @@
     <h2 class="philosophy-main">フルートを通じて、<br>人間力を高める。</h2>
     <p class="philosophy-body">
       集中力、粘り強さ、人前で表現する勇気——これらは、真摯に音楽と向き合えば
-      自然と育つもの。石田の指導が目指すのは、その先です。「本物の基準」を伝える
+      自然と育つもの。HIRAI Fl. が目指すのは、その先です。「本物の基準」を伝える
       ことと、唯一無二の指導法で、生徒の感性をひらき、潜在的な能力を引き出すため、
       最短でもう一段上の景色へ導きます。
     </p>
@@ -716,26 +774,32 @@
   </div>
 </section>
 
-<section class="venn-section">
+<section class="venn-section" id="venn-section">
   <div class="wrap">
     <div class="venn-wrap">
-      <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg"
+      <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"
            role="img" aria-label="感性・人間力・技術が重なり合い、成長を生み出すことを示す図">
-        <g class="venn-circle venn-a">
-          <circle cx="120" cy="120" r="92"></circle>
-          <text x="80" y="62" class="venn-label">感性</text>
+        <g class="venn-enter venn-enter-a">
+          <g class="venn-circle venn-a">
+            <circle cx="125" cy="100" r="90"></circle>
+            <text x="235" y="95" class="venn-label">感性</text>
+          </g>
         </g>
-        <g class="venn-circle venn-b">
-          <circle cx="200" cy="120" r="92"></circle>
-          <text x="240" y="62" class="venn-label">技術</text>
+        <g class="venn-enter venn-enter-b">
+          <g class="venn-circle venn-b">
+            <circle cx="125" cy="185" r="90"></circle>
+            <text x="235" y="180" class="venn-label">技術</text>
+          </g>
         </g>
-        <g class="venn-circle venn-c">
-          <circle cx="160" cy="192" r="92"></circle>
-          <text x="160" y="268" class="venn-label">人間力</text>
+        <g class="venn-enter venn-enter-c">
+          <g class="venn-circle venn-c">
+            <circle cx="125" cy="270" r="90"></circle>
+            <text x="235" y="265" class="venn-label">人間力</text>
+          </g>
         </g>
         <g class="venn-center-group">
-          <circle cx="160" cy="150" r="26" class="venn-center-bg"></circle>
-          <text x="160" y="155" class="venn-center-text">成長</text>
+          <circle cx="125" cy="185" r="26" class="venn-center-bg"></circle>
+          <text x="125" y="190" class="venn-center-text">成長</text>
         </g>
       </svg>
     </div>
@@ -753,26 +817,32 @@
       <h2>講師プロフィール</h2>
     </div>
 
-    <div class="profile-photo">【写真】</div>
-    <div class="profile-name">石田潤尉</div>
+    <div class="profile-photo-frame">
+      <img src="ishida-profile.jpg" alt="石田潤尉" class="profile-photo">
+    </div>
+    <div class="profile-name">石田 潤尉</div>
     <div class="profile-name-en">HIRAI ISHIDA</div>
     <div class="profile-title">フルート奏者 ／ 【出身音楽大学・専攻など】</div>
 
     <div class="profile-meta">
       <div class="profile-meta-item">
-        <span class="profile-meta-label">対応楽器</span>
-        <span class="profile-meta-value">フルート、ピッコロ、パーカッション、ピアノ</span>
+        <span class="profile-meta-label">演奏楽器</span>
+        <span class="profile-meta-value">フルート、ピッコロ、マリンバ、ピアノ</span>
       </div>
       <div class="profile-meta-item">
-        <span class="profile-meta-label">吹奏楽・マーチング</span>
-        <span class="profile-meta-value">パレコン・M響 などの指導実績</span>
+        <span class="profile-meta-label">演奏経歴</span>
+        <span class="profile-meta-value">オーケストラ、吹奏楽、マーチング、アンサンブルコンテスト</span>
+      </div>
+      <div class="profile-meta-item">
+        <span class="profile-meta-label">保有資格</span>
+        <span class="profile-meta-value">中学校・高等学校教諭一種免許状(音楽)</span>
       </div>
     </div>
 
     <div class="profile-bio">
       <p>
-        武蔵野音楽大学(フルート専攻)卒業。同大学は1929年創立、国立音楽大学・洗足学園音楽大学などと
-        並ぶ関東屈指の音楽大学で、中でも管楽器専修の実技教育に定評があります。在学中は宮下英司氏に師事。
+        武蔵野音楽大学(フルート専攻)卒業。同大学は1929年創立、日本国内屈指の音楽大学で、
+        中でも管楽器専修の実技教育に定評があります。在学中は宮下英司氏に師事。
       </p>
       <p>
         武蔵野音楽大学では、4年次の学内成績評価が4段階に分かれており、最上位の評価を
@@ -781,10 +851,10 @@
         これは技術・音楽性ともに学年トップクラスと認められた証であり、
         一般的なフルート講師とは学んできた深さが異なります。
       </p>
-      <p>
-        【レッスンに対する想いを記載します。例:基礎の徹底から、コンクールで
-        評価される表現力まで、一人ひとりの目標に合わせて段階的に指導します。
-        中学・高校の吹奏楽部での個人レッスンにも数多く対応してきました。】
+      <p class="profile-bio-highlight">
+        基礎の徹底から、コンクールで評価される表現力まで、一人ひとりの目標とペースに
+        合わせて段階的に指導します。オーケストラや吹奏楽、マーチングの現場で培ってきた
+        「本物の基準」を、これから一人でも多くの学生に伝えていきたいと考えています。
       </p>
     </div>
   </div>
@@ -803,7 +873,7 @@
         <div>
           <div class="diff-title">武蔵野音楽大学 卒業</div>
           <div class="diff-desc">
-            1929年創立、関東屈指の音楽大学で専門教育を受けています。特に管楽器専修の
+            1929年創立、日本国内屈指の音楽大学で専門教育を受けています。特に管楽器専修の
             実技教育に定評があり、一般的な音楽教室出身の講師とは基礎の鍛えられ方が異なります。
           </div>
         </div>
@@ -816,6 +886,10 @@
             武蔵野音楽大学の4年次成績評価は4段階。最上位の評価を得た学生のみが大学
             オーケストラの奏者として舞台に立つことができ、実際にその一員として演奏した
             実績があり、技術・音楽性が客観的に証明されています。
+          </div>
+          <div class="diff-photo-frame">
+            <img src="orchestra-stage.jpg" alt="大学オーケストラのステージの様子" class="diff-photo">
+            <p class="diff-photo-caption">実際に出演したオーケストラのステージ</p>
           </div>
         </div>
       </div>
@@ -843,13 +917,7 @@
     <div class="video-grid">
       <div>
         <div class="video-embed">
-          <!-- ここにYouTube等のiframeを埋め込みます。例:
-          <iframe src="https://www.youtube.com/embed/【動画ID】" allowfullscreen></iframe>
-          -->
-          <div class="video-placeholder">
-            <div class="play-icon">▶</div>
-            <div class="label">動画1</div>
-          </div>
+          <iframe src="https://www.youtube.com/embed/H7nFcrpkTUA" allowfullscreen loading="lazy"></iframe>
         </div>
         <p class="video-caption">【曲名・演奏会名などのキャプション】</p>
       </div>
@@ -986,6 +1054,57 @@
   </div>
 </section>
 
+<section id="school">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FOR SCHOOLS</div>
+      <h2>学校・部活動の外部指導のご依頼</h2>
+    </div>
+
+    <p class="school-intro">
+      吹奏楽部・マーチングバンドの外部指導者として、フルートパートの個人指導を
+      承っております。コンクールに向けた集中指導から、定期的な合奏・パート指導まで、
+      学校の状況に合わせてご相談ください。
+    </p>
+
+    <form>
+      <div class="form-group">
+        <label for="school-name">学校名</label>
+        <input type="text" id="school-name" name="school-name" placeholder="〇〇中学校 / 〇〇高等学校">
+      </div>
+      <div class="form-group">
+        <label for="contact-name">ご担当者名(顧問の先生など)</label>
+        <input type="text" id="contact-name" name="contact-name" placeholder="山田 太郎">
+      </div>
+      <div class="form-group">
+        <label for="school-email">メールアドレス</label>
+        <input type="email" id="school-email" name="school-email" placeholder="example@school.ac.jp">
+      </div>
+      <div class="form-group">
+        <label for="school-tel">電話番号(任意)</label>
+        <input type="tel" id="school-tel" name="school-tel" placeholder="000-0000-0000">
+      </div>
+      <div class="form-group">
+        <label for="request-type">ご依頼内容</label>
+        <select id="request-type" name="request-type">
+          <option>コンクール前の集中指導</option>
+          <option>定期的な外部指導</option>
+          <option>単発の指導</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="school-message">ご希望の時期・頻度、その他ご要望</label>
+        <textarea id="school-message" name="school-message" placeholder="例:大会2ヶ月前から月2回程度を希望"></textarea>
+      </div>
+      <button type="submit" class="submit-btn">この内容で問い合わせる</button>
+      <p class="form-note">
+        内容を確認のうえ、通常2〜3日以内にご担当者様へご連絡いたします。
+      </p>
+    </form>
+  </div>
+</section>
+
 <footer>
   <div class="brand">石田潤尉 Flute</div>
   <div class="footer-en">HIRAI ISHIDA</div>
@@ -993,6 +1112,29 @@
   <div class="contact-line">Mail: 【メールアドレス】　Instagram: 【@アカウント】</div>
   <div class="copyright">© 2026 Hirai Ishida Flute Lesson. All Rights Reserved.</div>
 </footer>
+
+<script>
+  (function () {
+    var target = document.getElementById('venn-section');
+    if (!target) return;
+
+    if (!('IntersectionObserver' in window)) {
+      target.classList.add('in-view');
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          target.classList.add('in-view');
+          observer.unobserve(target);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    observer.observe(target);
+  })();
+</script>
 
 </body>
 </html>
