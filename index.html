@@ -508,61 +508,10 @@
 
   /* --- 演奏動画 --- */
 
-  .video-scroll-hint {
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 0.05em;
-    color: var(--color-charcoal-soft);
-    margin-top: 10px;
-  }
-
-  @media (min-width: 1024px) {
-    .video-scroll-hint {
-      display: none;
-    }
-  }
-
   .video-grid {
     display: flex;
-    flex-direction: row;
-    gap: 28px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding: 4px 4px 20px;
-    margin: 0 -4px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-navy) transparent;
-  }
-
-  .video-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .video-grid::-webkit-scrollbar-thumb {
-    background: var(--color-navy);
-    border-radius: 2px;
-  }
-
-  .video-grid::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .video-grid > div {
-    flex: 0 0 78%;
-    scroll-snap-align: start;
-  }
-
-  @media (min-width: 640px) {
-    .video-grid > div {
-      flex: 0 0 45%;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .video-grid > div {
-      flex: 0 0 31%;
-    }
+    flex-direction: column;
+    gap: 48px;
   }
 
   .video-embed {
@@ -1060,7 +1009,6 @@
       <div class="eyebrow">PERFORMANCE</div>
       <h2>演奏動画</h2>
       <p class="youtube-link"><a href="https://youtube.com/@hiraifl" target="_blank" rel="noopener">YouTubeチャンネルはこちら ▶</a></p>
-      <p class="video-scroll-hint">← スワイプしてすべての演奏をご覧いただけます</p>
     </div>
 
     <div class="video-grid">
@@ -1084,13 +1032,6 @@
         </div>
         <p class="video-caption">【フルートアンサンブル】</p>
       </div>
-
-      <div>
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/bD3MgLmg35Q" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <p class="video-caption">【尾高 1楽章】</p>
-      </div>
     </div>
   </div>
 </section>
@@ -1106,7 +1047,7 @@
       <div class="lesson-item">
         <div>
           <div class="lesson-name">基礎強化レッスン(60分)</div>
-          <div class="lesson-desc">音色・アンブシュア・ロングトーンなど、上達の土台を丁寧に見直します。</div>
+          <div class="lesson-desc">指使い・ヴィブラート・音色・アンブシュア・ロングトーン・表現力など、上達の土台を丁寧に見直します。</div>
         </div>
         <div class="lesson-price">¥【金額】</div>
       </div>
@@ -1128,7 +1069,8 @@
 
     <p class="lesson-note">
       ※ レッスンは【エリア・最寄り駅】のスタジオにて対面で行います。<br>
-      ※ 学校のテスト期間・大会日程に合わせた振替にも対応しています。
+      ※ 学校のテスト期間・大会日程に合わせた振替にも対応しています。<br>
+      ※ 準備・片付けはレッスン時間に含まれます。
     </p>
   </div>
 </section>
@@ -1201,7 +1143,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">FOR SCHOOLS</div>
-      <h2>学校・部活動の外部指導のご依頼</h2>
+      <h2>学校・部活動の<br>外部指導のご依頼</h2>
     </div>
 
     <p class="school-intro">
