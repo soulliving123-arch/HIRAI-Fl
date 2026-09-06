@@ -510,8 +510,29 @@
 
   .video-grid {
     display: flex;
-    flex-direction: column;
-    gap: 48px;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 28px 20px;
+    margin: 0 -28px;
+    scrollbar-width: none;
+  }
+
+  .video-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .video-grid > div {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+  }
+
+  @media (min-width: 720px) {
+    .video-grid > div {
+      flex-basis: 44%;
+    }
   }
 
   .video-embed {
