@@ -123,7 +123,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 56px 28px 80px;
+    padding: 56px 28px 44px;
     background: var(--color-ivory);
   }
 
@@ -247,7 +247,7 @@
   /* --- 指導方針(哲学) --- */
 
   .philosophy {
-    padding: 120px 0;
+    padding: 64px 0 120px;
     text-align: center;
   }
 
@@ -275,6 +275,11 @@
     margin: 0 auto;
   }
 
+  .philosophy-body .emphasis {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
   /* --- 感性・人間力・技術 ベン図アニメーション --- */
 
   .venn-section {
@@ -288,6 +293,40 @@
     max-width: 26em;
     margin: 40px auto 0;
   }
+
+  .kanji-note {
+    max-width: 30em;
+    margin: 56px auto 0;
+    padding: 36px 32px;
+    border-top: 1px solid rgba(176, 141, 87, 0.4);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.4);
+    text-align: center;
+  }
+
+  .kanji-note-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    color: var(--color-navy);
+    margin-bottom: 16px;
+  }
+
+  .kanji-note-formula {
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    color: var(--color-gold);
+    margin-bottom: 20px;
+  }
+
+  .kanji-note-body {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--color-charcoal-soft);
+    margin-bottom: 16px;
+  }
+
+  .kanji-note-body:last-child { margin-bottom: 0; }
 
   .venn-wrap {
     max-width: 340px;
@@ -464,6 +503,7 @@
 
   .profile-bio-highlight {
     color: var(--color-gold);
+    font-weight: 700;
   }
 
   /* --- 演奏動画 --- */
@@ -808,11 +848,11 @@
 <section class="philosophy" id="philosophy">
   <div class="wrap">
     <p class="philosophy-lead">技術を伸ばすことは、当たり前。</p>
-    <h2 class="philosophy-main">フルートを通じて、<br>人間力を高める。</h2>
+    <h2 class="philosophy-main">フルートを通じて、<br>人間力も育てる。</h2>
     <p class="philosophy-body">
       集中力、粘り強さ、人前で表現する勇気——これらは、真摯に音楽と向き合えば
       自然と育つもの。HIRAI Fl. が目指すのは、その先です。「本物の基準」を伝える
-      ことと、唯一無二の指導法で、生徒の感性をひらき、潜在的な能力を引き出すため、
+      ことと、唯一無二の指導法で、<span class="emphasis">生徒の感性をひらき、潜在的な能力を引き出すため</span>、
       最短でもう一段上の景色へ導きます。
     </p>
     <div class="rule"></div>
@@ -852,6 +892,19 @@
       感性・人間力・技術。この3つが重なり合ったところに、
       本当の意味での成長が生まれます。
     </p>
+    <div class="kanji-note">
+      <p class="kanji-note-title">感性豊かに表現する</p>
+      <p class="kanji-note-formula">感 ＝ 咸 ＋ 心</p>
+      <p class="kanji-note-body">
+        「心」は、こころ・内側・精神。「咸」は、「すべて」という意味を持つ字。
+        つまり「感」とは、音や響きを心のすべてで受け取り、それを自分らしい音として
+        どう表現していくか、という働きを表しています。
+      </p>
+      <p class="kanji-note-body">
+        感覚・感性・感動・直感——良い演奏は、良く感じる心から生まれます。
+        これは学ぶ生徒だけでなく、指導する立場としても、日々大切にしている基本の姿勢です。
+      </p>
+    </div>
   </div>
 </section>
 
@@ -890,14 +943,14 @@
         中でも管楽器専修の実技教育に定評があります。在学中は宮下英司氏に師事。
       </p>
       <p>
-        在学中は、武蔵野音楽大学の最上位評価を得ました。これは技術・音楽性ともに
-        学年トップクラスと認められた証であり、一般的なフルート講師とは
-        学んできた深さが異なります。
+        卒業時は、武蔵野音楽大学の最上位評価を得ております。豊富な演奏経験と専門的な
+        学びに裏付けられた、確かな知識と技術によって "魔法のように" 1度のレッスンでも
+        確かな成長を得ていただけます。
       </p>
       <p class="profile-bio-highlight">
         基礎の徹底から、コンクールで評価される表現力まで、一人ひとりの目標とペースに
         合わせて段階的に指導します。オーケストラや吹奏楽、マーチングの現場で培ってきた
-        「本物の基準」を、これから一人でも多くの学生に伝えていきたいと考えています。
+        「本物の基準」を、可能性に満ちた学生達に伝えています。
       </p>
     </div>
   </div>
@@ -926,9 +979,9 @@
         <div>
           <div class="diff-title">学内最上位評価でオーケストラ奏者に選出</div>
           <div class="diff-desc">
-            武蔵野音楽大学の4年次成績評価は4段階。最上位の評価を得た学生のみが大学
-            オーケストラの奏者として舞台に立つことができ、実際にその一員として演奏した
-            実績があり、技術・音楽性が学年トップクラスとして客観的に証明されています。
+            武蔵野音楽大学の卒業時の成績評価は4段階。最上位の評価を得た学生のみが大学
+            オーケストラの奏者として舞台に立つことができ、実際にその一員として実績を残し、
+            技術・音楽性が学年トップクラスとして証明されています。
           </div>
           <div class="diff-photo-frame">
             <img src="orchestra-stage.jpg" alt="大学オーケストラのステージの様子" class="diff-photo">
@@ -1006,15 +1059,8 @@
       </div>
       <div class="lesson-item">
         <div>
-          <div class="lesson-name">コンクール対策レッスン(60分)</div>
-          <div class="lesson-desc">課題曲・自由曲の仕上げから、審査で評価される表現づくりまで指導します。</div>
-        </div>
-        <div class="lesson-price">¥【金額】</div>
-      </div>
-      <div class="lesson-item">
-        <div>
-          <div class="lesson-name">吹奏楽部 個人強化レッスン(45分)</div>
-          <div class="lesson-desc">部活動と並行して通える時間設定。パート内での演奏力向上をサポートします。</div>
+          <div class="lesson-name">コンクール・吹奏楽部対策レッスン(60分)</div>
+          <div class="lesson-desc">課題曲・自由曲の仕上げから、審査で評価される表現づくりまで。部活動と並行して通える時間設定にも対応し、パート内での演奏力向上もサポートします。</div>
         </div>
         <div class="lesson-price">¥【金額】</div>
       </div>
