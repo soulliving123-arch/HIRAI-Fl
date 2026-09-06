@@ -104,14 +104,27 @@
   /* --- ヒーロー --- */
 
   .hero {
-    min-height: 100svh;
+    position: relative;
+  }
+
+  .hero-image {
+    margin-top: 68px;
+    width: 100%;
+    height: 52svh;
+    min-height: 320px;
+    max-height: 620px;
+    background-image: url('hero-ensemble.jpg');
+    background-size: cover;
+    background-position: center 28%;
+  }
+
+  .hero-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 140px 28px 80px;
-    position: relative;
+    padding: 56px 28px 80px;
+    background: var(--color-ivory);
   }
 
   .hero-eyebrow {
@@ -156,16 +169,23 @@
   .credential-badge {
     margin-top: 32px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 8px 14px;
+    gap: 8px;
     font-size: 12px;
     letter-spacing: 0.08em;
     color: var(--color-charcoal-soft);
     border-top: 1px solid rgba(176, 141, 87, 0.4);
     border-bottom: 1px solid rgba(176, 141, 87, 0.4);
     padding: 12px 20px;
+  }
+
+  .credential-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 14px;
   }
 
   .credential-badge span {
@@ -205,6 +225,23 @@
     font-weight: 600;
     font-size: clamp(24px, 4vw, 30px);
     letter-spacing: 0.05em;
+  }
+
+  .youtube-link {
+    margin-top: 18px;
+  }
+
+  .youtube-link a {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--color-navy);
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+  }
+
+  .youtube-link a:hover {
+    color: var(--color-gold);
   }
 
   /* --- 指導方針(哲学) --- */
@@ -746,17 +783,25 @@
 </header>
 
 <section class="hero">
-  <div class="hero-eyebrow">OITA FLUTE LESSON</div>
-  <h1>確かな技術で、<br>次のステージへ。</h1>
-  <p class="lead">
-    コンクール入賞、そして着実な上達を目指す<span class="no-break">中学生・高校生</span>のための<br class="only-desktop">
-    フルート個人レッスンを大分県内にて開講しています。
-  </p>
-  <a href="#trial" class="cta">体験レッスンを予約する</a>
-  <div class="credential-badge">
-    <span>武蔵野音楽大学卒業</span>
-    <span class="dot">●</span>
-    <span>学内最上位評価でオーケストラ奏者に選出</span>
+  <div class="hero-image"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">OITA FLUTE LESSON</div>
+    <h1>確かな技術で、<br>次のステージへ。</h1>
+    <p class="lead">
+      コンクール入賞、そして着実な上達を目指す<span class="no-break">中学生・高校生</span>のための<br class="only-desktop">
+      フルート個人レッスンを大分県内にて開講しています。
+    </p>
+    <a href="#trial" class="cta">体験レッスンを予約する</a>
+    <div class="credential-badge">
+      <div class="credential-line">
+        <span class="dot">●</span>
+        <span>武蔵野音楽大学卒業</span>
+        <span class="dot">●</span>
+      </div>
+      <div class="credential-line">
+        <span>学内最上位評価でオーケストラ奏者に選出</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -822,7 +867,7 @@
     </div>
     <div class="profile-name">石田 潤尉</div>
     <div class="profile-name-en">HIRAI ISHIDA</div>
-    <div class="profile-title">フルート奏者 ／ 【出身音楽大学・専攻など】</div>
+    <div class="profile-title">フルート奏者</div>
 
     <div class="profile-meta">
       <div class="profile-meta-item">
@@ -845,11 +890,9 @@
         中でも管楽器専修の実技教育に定評があります。在学中は宮下英司氏に師事。
       </p>
       <p>
-        武蔵野音楽大学では、4年次の学内成績評価が4段階に分かれており、最上位の評価を
-        得た学生のみが大学オーケストラの奏者として舞台に立つことができます。
-        石田潤尉はこの最上位評価を得て、実際にオーケストラの一員として演奏しました。
-        これは技術・音楽性ともに学年トップクラスと認められた証であり、
-        一般的なフルート講師とは学んできた深さが異なります。
+        在学中は、武蔵野音楽大学の最上位評価を得ました。これは技術・音楽性ともに
+        学年トップクラスと認められた証であり、一般的なフルート講師とは
+        学んできた深さが異なります。
       </p>
       <p class="profile-bio-highlight">
         基礎の徹底から、コンクールで評価される表現力まで、一人ひとりの目標とペースに
@@ -874,7 +917,7 @@
           <div class="diff-title">武蔵野音楽大学 卒業</div>
           <div class="diff-desc">
             1929年創立、日本国内屈指の音楽大学で専門教育を受けています。特に管楽器専修の
-            実技教育に定評があり、一般的な音楽教室出身の講師とは基礎の鍛えられ方が異なります。
+            実技教育に定評があり、一般的な音楽大学出身の講師とは基礎の鍛えられ方が異なります。
           </div>
         </div>
       </div>
@@ -885,7 +928,7 @@
           <div class="diff-desc">
             武蔵野音楽大学の4年次成績評価は4段階。最上位の評価を得た学生のみが大学
             オーケストラの奏者として舞台に立つことができ、実際にその一員として演奏した
-            実績があり、技術・音楽性が客観的に証明されています。
+            実績があり、技術・音楽性が学年トップクラスとして客観的に証明されています。
           </div>
           <div class="diff-photo-frame">
             <img src="orchestra-stage.jpg" alt="大学オーケストラのステージの様子" class="diff-photo">
@@ -912,6 +955,7 @@
     <div class="section-head">
       <div class="eyebrow">PERFORMANCE</div>
       <h2>演奏動画</h2>
+      <p class="youtube-link"><a href="https://youtube.com/@hiraifl" target="_blank" rel="noopener">YouTubeチャンネルはこちら ▶</a></p>
     </div>
 
     <div class="video-grid">
