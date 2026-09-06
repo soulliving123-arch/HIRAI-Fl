@@ -508,10 +508,61 @@
 
   /* --- 演奏動画 --- */
 
+  .video-scroll-hint {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--color-charcoal-soft);
+    margin-top: 10px;
+  }
+
+  @media (min-width: 1024px) {
+    .video-scroll-hint {
+      display: none;
+    }
+  }
+
   .video-grid {
     display: flex;
-    flex-direction: column;
-    gap: 48px;
+    flex-direction: row;
+    gap: 28px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 4px 20px;
+    margin: 0 -4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-navy) transparent;
+  }
+
+  .video-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .video-grid::-webkit-scrollbar-thumb {
+    background: var(--color-navy);
+    border-radius: 2px;
+  }
+
+  .video-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .video-grid > div {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+
+  @media (min-width: 640px) {
+    .video-grid > div {
+      flex: 0 0 45%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .video-grid > div {
+      flex: 0 0 31%;
+    }
   }
 
   .video-embed {
@@ -1009,6 +1060,7 @@
       <div class="eyebrow">PERFORMANCE</div>
       <h2>演奏動画</h2>
       <p class="youtube-link"><a href="https://youtube.com/@hiraifl" target="_blank" rel="noopener">YouTubeチャンネルはこちら ▶</a></p>
+      <p class="video-scroll-hint">← スワイプしてすべての演奏をご覧いただけます</p>
     </div>
 
     <div class="video-grid">
@@ -1031,6 +1083,13 @@
           <iframe src="https://www.youtube.com/embed/eLh6hec-Tbs" allowfullscreen loading="lazy"></iframe>
         </div>
         <p class="video-caption">【フルートアンサンブル】</p>
+      </div>
+
+      <div>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/bD3MgLmg35Q" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="video-caption">【尾高 1楽章】</p>
       </div>
     </div>
   </div>
