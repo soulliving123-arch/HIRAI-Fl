@@ -168,9 +168,16 @@
     height: 52svh;
     min-height: 320px;
     max-height: 620px;
-    background-image: url('hero-ensemble.jpg');
-    background-size: cover;
-    background-position: center 28%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    display: block;
   }
 
   .hero-content {
@@ -686,7 +693,8 @@
 
   .diff-photo-frame {
     margin-top: 24px;
-    padding: 8px;
+    margin-bottom: 28px;
+    padding: 8px 8px 16px;
     border: 1px solid var(--color-gold);
   }
 
@@ -697,7 +705,8 @@
   }
 
   .diff-photo-caption {
-    margin-top: 10px;
+    margin-top: 14px;
+    padding: 0 4px;
     font-size: 12px;
     color: var(--color-charcoal-soft);
     letter-spacing: 0.05em;
@@ -906,7 +915,7 @@
 <header>
   <div class="header-inner">
     <div class="brand">HIRAI Fl.</div>
-    <a href="LINE_URL_PLACEHOLDER" class="line-btn line-btn-header" target="_blank" rel="noopener">
+    <a href="https://lin.ee/5y1SZ6eN" class="line-btn line-btn-header" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 4.02 3.42 7.39 8.03 8.08.35.08.82.24.94.54.11.28.07.71.03 1l-.15.9c-.05.28-.22 1.08.95.59 1.16-.49 6.29-3.71 8.58-6.36C21.7 13.5 22 11.93 22 10.25 22 5.69 17.52 2 12 2z"/></svg>
       <span>友だち追加</span>
     </a>
@@ -914,7 +923,11 @@
 </header>
 
 <section class="hero">
-  <div class="hero-image"></div>
+  <div class="hero-image">
+    <video autoplay muted loop playsinline poster="hero-video-poster.jpg">
+      <source src="hero-video.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-content">
     <div class="hero-eyebrow">OITA FLUTE LESSON</div>
     <h1>確かな技術で、<br>次のステージへ。</h1>
@@ -923,7 +936,7 @@
       フルート個人レッスンを大分県内にて開講しています。
     </p>
     <div class="hero-cta-row">
-      <a href="LINE_URL_PLACEHOLDER" class="cta cta-line" target="_blank" rel="noopener">
+      <a href="https://lin.ee/5y1SZ6eN" class="cta cta-line" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 4.02 3.42 7.39 8.03 8.08.35.08.82.24.94.54.11.28.07.71.03 1l-.15.9c-.05.28-.22 1.08.95.59 1.16-.49 6.29-3.71 8.58-6.36C21.7 13.5 22 11.93 22 10.25 22 5.69 17.52 2 12 2z"/></svg>
         <span>体験レッスンのご相談</span>
       </a>
@@ -1050,7 +1063,7 @@
       </div>
       <p>
         豊富な演奏経験と専門的な学びに裏付けられた、確かな知識と技術によって
-        "魔法のように" 1度のレッスンでも確かな成長を得ていただけます。
+        "魔法のように"<br>1度のレッスンでも確かな成長を得ていただけます。
       </p>
       <p class="profile-bio-highlight">
         基礎の徹底から、コンクールで評価される表現力まで、一人ひとりの目標とペースに
@@ -1157,7 +1170,7 @@
       </div>
       <div class="lesson-item">
         <div>
-          <div class="lesson-name">コンクール・吹奏楽部対策レッスン(60分)</div>
+          <div class="lesson-name">コンクール・吹奏楽部・<span class="no-break">マーチング</span><br>対策レッスン(60分)</div>
           <div class="lesson-desc">課題曲・自由曲の仕上げから、審査で評価される表現づくりまで。部活動と並行して通える時間設定にも対応し、パート内での演奏力向上もサポートします。</div>
         </div>
         <div class="lesson-price">¥【金額】</div>
