@@ -170,13 +170,17 @@
     max-height: 620px;
     overflow: hidden;
     position: relative;
+    background: var(--color-ivory);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hero-image video {
-    width: 100%;
+  .hero-image img {
     height: 100%;
-    object-fit: cover;
-    object-position: center 28%;
+    width: auto;
+    max-width: 90%;
+    object-fit: contain;
     display: block;
   }
 
@@ -925,9 +929,7 @@
 
 <section class="hero">
   <div class="hero-image">
-    <video autoplay muted loop playsinline poster="hero-video-poster.jpg">
-      <source src="hero-video.mp4" type="video/mp4">
-    </video>
+    <img src="hero-illustration.jpg" alt="フルートを吹く横顔のイラスト">
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">OITA FLUTE LESSON</div>
