@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>体験レッスンのお申し込み | HIRAI Fl.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-ivory: #FFFFFF;
+    --color-charcoal: #1E2430;
+    --color-charcoal-soft: #4C5566;
+    --color-navy: #1F3A5C;
+    --color-gold: #B08D57;
+    --font-display: 'Shippori Mincho', serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+    --max-width: 560px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 28px 80px;
+  }
+
+  header {
+    padding: 22px 28px;
+    text-align: center;
+    border-bottom: 1px solid rgba(176, 141, 87, 0.25);
+  }
+
+  .brand {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .section-head {
+    text-align: center;
+    margin: 48px 0 40px;
+  }
+
+  .section-head .eyebrow {
+    font-size: 12px;
+    color: var(--color-gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+
+  .section-head h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(22px, 5vw, 28px);
+    letter-spacing: 0.05em;
+  }
+
+  .section-head p {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--color-charcoal-soft);
+  }
+
+  .form-group { margin-bottom: 24px; }
+
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--color-charcoal-soft);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(43, 37, 33, 0.25);
+    padding: 10px 2px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--color-charcoal);
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-bottom-color: var(--color-navy);
+  }
+
+  textarea { resize: vertical; min-height: 90px; }
+
+  .form-group-checkbox { margin-bottom: 28px; }
+
+  .checkbox-label {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px !important;
+    color: var(--color-charcoal) !important;
+    letter-spacing: 0.02em !important;
+    cursor: pointer;
+  }
+
+  .checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-top: 3px;
+    accent-color: var(--color-navy);
+  }
+
+  .checkbox-label a {
+    color: var(--color-navy);
+    border-bottom: 1px solid var(--color-gold);
+    text-decoration: none;
+  }
+
+  .submit-btn {
+    margin-top: 12px;
+    width: 100%;
+    background: var(--color-navy);
+    color: var(--color-ivory);
+    border: none;
+    padding: 16px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .submit-btn:hover { background: #142943; }
+
+  .form-note {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--color-charcoal-soft);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">HIRAI Fl.</div>
+</header>
+
+<img src="trial-hero.jpg" alt="" class="hero-image">
+
+<div class="wrap">
+  <div class="section-head">
+    <div class="eyebrow">TRIAL LESSON</div>
+    <h1>体験レッスンのお申し込み</h1>
+    <p>下記のフォームにご記入のうえ、送信してください。</p>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="name">お名前</label>
+      <input type="text" id="name" name="name" placeholder="山田 花子">
+    </div>
+    <div class="form-group">
+      <label for="email">メールアドレス</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com">
+    </div>
+    <div class="form-group">
+      <label for="experience">フルートのご経験</label>
+      <select id="experience" name="experience">
+        <option>はじめて</option>
+        <option>経験あり(ブランクあり)</option>
+        <option>経験あり(現在も演奏中)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="challenge">今、解決したい課題</label>
+      <textarea id="challenge" name="challenge" placeholder="例:音色が安定しない、コンクールに向けて技術を伸ばしたい など"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="goal">目標としていること</label>
+      <textarea id="goal" name="goal" placeholder="例:コンクールで入賞したい、吹奏楽部のオーディションに合格したい など"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="message">ご希望日時・ご質問など</label>
+      <textarea id="message" name="message" placeholder="ご希望の曜日・時間帯などご記入ください"></textarea>
+    </div>
+    <div class="form-group form-group-checkbox">
+      <label class="checkbox-label">
+        <input type="checkbox" id="agree" name="agree" required>
+        <span><a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する</span>
+      </label>
+    </div>
+    <button type="submit" class="submit-btn">この内容で送信する</button>
+    <p class="form-note">
+      通常2〜3日以内に、ご入力のメールアドレスへご返信いたします。
+    </p>
+  </form>
+</div>
+
+</body>
+</html>
