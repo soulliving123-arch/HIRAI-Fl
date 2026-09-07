@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お知らせ | HIRAI Fl.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-ivory: #FFFFFF;
+    --color-charcoal: #1E2430;
+    --color-charcoal-soft: #4C5566;
+    --color-navy: #1F3A5C;
+    --color-gold: #B08D57;
+    --font-display: 'Shippori Mincho', serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+    --max-width: 640px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  header {
+    padding: 22px 28px;
+    text-align: center;
+    border-bottom: 1px solid rgba(176, 141, 87, 0.25);
+  }
+
+  .brand {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 56px 28px 100px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    color: var(--color-gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(22px, 5vw, 28px);
+    letter-spacing: 0.05em;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .news-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news-item {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(176, 141, 87, 0.25);
+  }
+
+  .news-item:first-child { padding-top: 0; }
+
+  .news-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .news-date {
+    font-size: 12px;
+    color: var(--color-charcoal-soft);
+    letter-spacing: 0.05em;
+  }
+
+  .news-tag {
+    font-size: 11px;
+    color: var(--color-navy);
+    border: 1px solid var(--color-navy);
+    padding: 2px 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .news-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    margin-bottom: 10px;
+  }
+
+  .news-body {
+    font-size: 14px;
+    color: var(--color-charcoal-soft);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">HIRAI Fl.</div>
+</header>
+
+<div class="wrap">
+  <div class="eyebrow">NEWS</div>
+  <h1>お知らせ</h1>
+
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="news-date">【2026.9.7】</span>
+        <span class="news-tag">お知らせ</span>
+      </div>
+      <div class="news-title">【お知らせタイトルをここに入力】</div>
+      <div class="news-body">
+        【お知らせの本文をここに入力してください。レッスンのスケジュール変更、募集状況、コンクール結果など、お客様にお伝えしたい内容をご記入ください。】
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-meta">
+        <span class="news-date">【2026.X.X】</span>
+        <span class="news-tag">お知らせ</span>
+      </div>
+      <div class="news-title">【お知らせタイトルをここに入力】</div>
+      <div class="news-body">
+        【お知らせの本文をここに入力してください。】
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
