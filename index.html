@@ -80,6 +80,61 @@
 
   .no-break { white-space: nowrap; }
 
+  /* --- LINE公式アカウントボタン --- */
+
+  .line-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #06C755;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .line-btn:hover { opacity: 0.85; }
+
+  .line-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .line-btn.line-btn-header { padding: 7px 14px; font-size: 11px; }
+
+  @media (max-width: 560px) {
+    .line-btn.line-btn-header span { display: none; }
+    .line-btn.line-btn-header { padding: 9px; border-radius: 50%; }
+  }
+
+  .hero-cta-row {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero .cta.cta-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero .cta.cta-line svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  .cta-line-note {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--color-charcoal-soft);
+  }
+
   .only-desktop { display: none; }
 
   @media (min-width: 561px) {
@@ -833,6 +888,17 @@
     color: rgba(43, 37, 33, 0.4);
     letter-spacing: 0.05em;
   }
+
+  .footer-privacy {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+
+  .footer-privacy a {
+    color: rgba(43, 37, 33, 0.5);
+    border-bottom: 1px solid rgba(176, 141, 87, 0.4);
+    text-decoration: none;
+  }
 </style>
 </head>
 <body>
@@ -840,6 +906,10 @@
 <header>
   <div class="header-inner">
     <div class="brand">HIRAI Fl.</div>
+    <a href="LINE_URL_PLACEHOLDER" class="line-btn line-btn-header" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 4.02 3.42 7.39 8.03 8.08.35.08.82.24.94.54.11.28.07.71.03 1l-.15.9c-.05.28-.22 1.08.95.59 1.16-.49 6.29-3.71 8.58-6.36C21.7 13.5 22 11.93 22 10.25 22 5.69 17.52 2 12 2z"/></svg>
+      <span>友だち追加</span>
+    </a>
   </div>
 </header>
 
@@ -852,7 +922,13 @@
       コンクール入賞、そして着実な上達を目指す<span class="no-break">中学生・高校生</span>のための<br class="only-desktop">
       フルート個人レッスンを大分県内にて開講しています。
     </p>
-    <a href="#trial" class="cta">体験レッスンを予約する</a>
+    <div class="hero-cta-row">
+      <a href="LINE_URL_PLACEHOLDER" class="cta cta-line" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 4.02 3.42 7.39 8.03 8.08.35.08.82.24.94.54.11.28.07.71.03 1l-.15.9c-.05.28-.22 1.08.95.59 1.16-.49 6.29-3.71 8.58-6.36C21.7 13.5 22 11.93 22 10.25 22 5.69 17.52 2 12 2z"/></svg>
+        <span>体験レッスンのご相談</span>
+      </a>
+      <div class="cta-line-note">公式LINEから承っています</div>
+    </div>
     <div class="credential-badge">
       <div class="credential-line">
         <span class="dot">●</span>
@@ -964,9 +1040,17 @@
         中でも管楽器専修の実技教育に定評があります。在学中は宮下英司氏に師事。
       </p>
       <p>
-        卒業時は、武蔵野音楽大学の最上位評価を得ております。豊富な演奏経験と専門的な
-        学びに裏付けられた、確かな知識と技術によって "魔法のように" 1度のレッスンでも
-        確かな成長を得ていただけます。
+        卒業時の成績評価は4段階。最上位の評価を得た学生のみが大学オーケストラの奏者
+        として舞台に立つことができ、実際にその一員として演奏し、技術・音楽性が学年
+        トップクラスであることを証明してきました。
+      </p>
+      <div class="diff-photo-frame">
+        <img src="orchestra-stage.jpg" alt="大学オーケストラのステージの様子" class="diff-photo">
+        <p class="diff-photo-caption">実際に出演したオーケストラのステージ</p>
+      </div>
+      <p>
+        豊富な演奏経験と専門的な学びに裏付けられた、確かな知識と技術によって
+        "魔法のように" 1度のレッスンでも確かな成長を得ていただけます。
       </p>
       <p class="profile-bio-highlight">
         基礎の徹底から、コンクールで評価される表現力まで、一人ひとりの目標とペースに
@@ -988,35 +1072,31 @@
       <div class="diff-item">
         <div class="diff-numeral">I</div>
         <div>
-          <div class="diff-title">武蔵野音楽大学 卒業</div>
+          <div class="diff-title">中高生のコンクール指導に特化</div>
           <div class="diff-desc">
-            1929年創立、日本国内屈指の音楽大学で専門教育を受けています。特に管楽器専修の
-            実技教育に定評があり、一般的な音楽大学出身の講師とは基礎の鍛えられ方が異なります。
+            吹奏楽部やコンクールを目指す<span class="no-break">中学生・高校生</span>の指導経験が豊富。学業と両立
+            しながら結果を出すための、無理のない練習設計にも精通しています。
           </div>
         </div>
       </div>
       <div class="diff-item">
         <div class="diff-numeral">II</div>
         <div>
-          <div class="diff-title">学内最上位評価でオーケストラ奏者に選出</div>
+          <div class="diff-title">短期間で結果に変わる指導力</div>
           <div class="diff-desc">
-            武蔵野音楽大学の卒業時の成績評価は4段階。最上位の評価を得た学生のみが大学
-            オーケストラの奏者として舞台に立つことができ、実際にその一員として実績を残し、
-            技術・音楽性が学年トップクラスとして証明されています。
-          </div>
-          <div class="diff-photo-frame">
-            <img src="orchestra-stage.jpg" alt="大学オーケストラのステージの様子" class="diff-photo">
-            <p class="diff-photo-caption">実際に出演したオーケストラのステージ</p>
+            パート内で最も伸び悩んでいた生徒が、指導後のオーディションで1位通過を果たした
+            実例があります。限られた時間の中でも、着眼点を変えるだけで結果は大きく変わる
+            ——それを裏付ける指導です。
           </div>
         </div>
       </div>
       <div class="diff-item">
         <div class="diff-numeral">III</div>
         <div>
-          <div class="diff-title">中高生のコンクール指導に特化</div>
+          <div class="diff-title">最上位実績者の指導</div>
           <div class="diff-desc">
-            吹奏楽部やコンクールを目指す<span class="no-break">中学生・高校生</span>の指導経験が豊富。学業と両立
-            しながら結果を出すための、無理のない練習設計にも精通しています。
+            1929年創立、日本国内屈指の音楽大学で専門教育を受けています。特に管楽器専修の
+            実技教育に定評があり、一般的な音楽大学出身の講師とは基礎の鍛えられ方が異なります。
           </div>
         </div>
       </div>
@@ -1127,7 +1207,7 @@
   </div>
 </section>
 
-<section class="alt" id="trial">
+<section class="alt" id="trial" style="scroll-margin-top: 90px;">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">TRIAL LESSON</div>
@@ -1150,6 +1230,14 @@
           <option>経験あり(ブランクあり)</option>
           <option>経験あり(現在も演奏中)</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label for="challenge">今、解決したい課題</label>
+        <textarea id="challenge" name="challenge" placeholder="例:音色が安定しない、コンクールに向けて技術を伸ばしたい など"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="goal">目標としていること</label>
+        <textarea id="goal" name="goal" placeholder="例:コンクールで入賞したい、吹奏楽部のオーディションに合格したい など"></textarea>
       </div>
       <div class="form-group">
         <label for="message">ご希望日時・ご質問など</label>
@@ -1220,6 +1308,7 @@
   <div class="contact-line">〒【郵便番号】 【住所】</div>
   <div class="contact-line">Mail: 【メールアドレス】　Instagram: 【@アカウント】</div>
   <div class="copyright">© 2026 Hirai Ishida Flute Lesson. All Rights Reserved.</div>
+  <div class="footer-privacy"><a href="privacy.html">プライバシーポリシー</a></div>
 </footer>
 
 <script>
