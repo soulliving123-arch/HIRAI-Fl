@@ -53,7 +53,10 @@
     z-index: 100;
     background: rgba(247, 243, 236, 0.92);
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(176, 141, 87, 0.25);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
   }
 
   .header-inner {
@@ -170,6 +173,7 @@
     max-height: 620px;
     overflow: hidden;
     position: relative;
+    background: var(--color-navy);
   }
 
   .hero-image img {
@@ -1045,7 +1049,7 @@
     </div>
 
     <div class="profile-photo-frame">
-      <img src="ishida-profile.png" alt="石田潤尉" class="profile-photo">
+      <img src="ishida-profile.jpg" alt="石田潤尉" class="profile-photo">
     </div>
     <div class="profile-name">石田 潤尉</div>
     <div class="profile-name-en">HIRAI ISHIDA</div>
