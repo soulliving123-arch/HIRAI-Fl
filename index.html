@@ -367,6 +367,34 @@
     flex-shrink: 0;
   }
 
+  /* --- スクロールアニメーション(フェードイン+スライドアップ) --- */
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-list > .reveal:nth-child(1) { transition-delay: 0s; }
+  .reveal-list > .reveal:nth-child(2) { transition-delay: 0.1s; }
+  .reveal-list > .reveal:nth-child(3) { transition-delay: 0.2s; }
+  .reveal-list > .reveal:nth-child(4) { transition-delay: 0.3s; }
+  .reveal-list > .reveal:nth-child(5) { transition-delay: 0.4s; }
+  .reveal-list > .reveal:nth-child(6) { transition-delay: 0.5s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
   .philosophy {
     padding: 64px 0 120px;
     text-align: center;
@@ -1093,12 +1121,12 @@
 
 <section id="profile">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">PROFILE</div>
       <h2>講師プロフィール</h2>
     </div>
 
-    <div class="profile-photo-frame">
+    <div class="profile-photo-frame reveal">
       <img src="ishida-portrait.jpg" alt="石田潤尉" class="profile-photo">
     </div>
     <div class="profile-name">石田 潤尉</div>
@@ -1129,7 +1157,7 @@
         武蔵野音楽大学(フルート専攻)卒業。同大学は1929年創立、日本国内屈指の音楽大学で、
         中でも管楽器専修の実技教育に定評があります。在学中は宮下英司氏に師事。
       </p>
-      <div class="ensemble-photo-frame">
+      <div class="ensemble-photo-frame reveal">
         <img src="flute-ensemble-photo.jpg" alt="フルートアンサンブル演奏会の集合写真" class="ensemble-photo">
       </div>
       <p>
@@ -1156,13 +1184,13 @@
 
 <section id="difference">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">DIFFERENCE</div>
       <h2>選ばれる理由</h2>
     </div>
 
-    <div class="diff-list">
-      <div class="diff-item">
+    <div class="diff-list reveal-list">
+      <div class="diff-item reveal">
         <div class="diff-numeral">I</div>
         <div>
           <div class="diff-title">中高生のコンクール指導に特化</div>
@@ -1172,7 +1200,7 @@
           </div>
         </div>
       </div>
-      <div class="diff-item">
+      <div class="diff-item reveal">
         <div class="diff-numeral">II</div>
         <div>
           <div class="diff-title">短期間で結果に変わる指導力</div>
@@ -1183,7 +1211,7 @@
           </div>
         </div>
       </div>
-      <div class="diff-item">
+      <div class="diff-item reveal">
         <div class="diff-numeral">III</div>
         <div>
           <div class="diff-title">最上位実績者の指導</div>
@@ -1199,32 +1227,32 @@
 
 <section class="alt" id="video">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">PERFORMANCE</div>
       <h2>演奏動画</h2>
       <p class="youtube-link"><a href="https://youtube.com/@hiraifl" target="_blank" rel="noopener">YouTubeチャンネルはこちら ▶</a></p>
     </div>
 
-    <div class="video-grid">
-      <div>
+    <div class="video-grid reveal-list">
+      <div class="reveal">
         <div class="video-embed">
           <iframe src="https://www.youtube.com/embed/H7nFcrpkTUA" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
 
-      <div>
+      <div class="reveal">
         <div class="video-embed">
           <iframe src="https://www.youtube.com/embed/ecukTinAbE4" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
 
-      <div>
+      <div class="reveal">
         <div class="video-embed">
           <iframe src="https://www.youtube.com/embed/eLh6hec-Tbs" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
 
-      <div>
+      <div class="reveal">
         <div class="video-embed">
           <iframe src="https://www.youtube.com/embed/bD3MgLmg35Q" allowfullscreen loading="lazy"></iframe>
         </div>
@@ -1233,7 +1261,7 @@
   </div>
 </section>
 
-<div class="news-banner">
+<div class="news-banner reveal">
   <span class="news-banner-label">NEWS</span>
   <span class="news-banner-text">2026.9.8 レッスン開始時期について:2026年11月よりご予約が可能となります。</span>
   <a href="news.html" class="news-banner-link">お知らせ一覧 ▶</a>
@@ -1241,41 +1269,41 @@
 
 <section id="lesson">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">LESSON &amp; PRICE</div>
       <h2>レッスン内容・料金</h2>
     </div>
 
-    <div class="lesson-list">
-      <div class="lesson-item">
+    <div class="lesson-list reveal-list">
+      <div class="lesson-item reveal">
         <div>
           <div class="lesson-name">体験レッスン(30分)</div>
           <div class="lesson-desc">はじめての方も、他教室からの移籍もご相談ください。</div>
         </div>
         <div class="lesson-price">¥4,000</div>
       </div>
-      <div class="lesson-item">
+      <div class="lesson-item reveal">
         <div>
           <div class="lesson-name">定期レッスン(60分)</div>
           <div class="lesson-desc">日頃の練習や課題曲・ポップスなど、日常的な音楽練習に継続して取り組むレッスンです。</div>
         </div>
         <div class="lesson-price">¥7,000</div>
       </div>
-      <div class="lesson-item">
+      <div class="lesson-item reveal">
         <div>
           <div class="lesson-name">基礎強化レッスン(75分)</div>
           <div class="lesson-desc">指使い・ヴィブラート・音色・アンブシュア・ロングトーン・表現力など、上達の土台を丁寧に見直します。</div>
         </div>
         <div class="lesson-price">¥8,000</div>
       </div>
-      <div class="lesson-item">
+      <div class="lesson-item reveal">
         <div>
           <div class="lesson-name">コンクール・吹奏楽部対策レッスン(75分)</div>
           <div class="lesson-desc">課題曲・自由曲の仕上げから、審査で評価される表現づくりまで。部活動と並行して通える時間設定にも対応し、パート内での演奏力向上もサポートします。</div>
         </div>
         <div class="lesson-price">¥8,000</div>
       </div>
-      <div class="lesson-item">
+      <div class="lesson-item reveal">
         <div>
           <div class="lesson-name">少人数グループレッスン(60分)</div>
           <div class="lesson-desc">月2回開催。お一人からご参加いただける少人数制のグループレッスンです。基礎から表現力までを、他の生徒と刺激し合いながら学べます。</div>
@@ -1297,7 +1325,7 @@
 <!--
 <section id="voice">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">VOICE</div>
       <h2>生徒の声</h2>
     </div>
@@ -1328,7 +1356,7 @@
 
 <section class="alt" id="trial" style="scroll-margin-top: 90px;">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">TRIAL LESSON</div>
       <h2>体験レッスンのお申し込み</h2>
     </div>
@@ -1372,7 +1400,7 @@
 
 <section id="school">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div class="eyebrow">FOR SCHOOLS</div>
       <h2>学校・部活動の<br>外部指導のご依頼</h2>
     </div>
@@ -1429,6 +1457,23 @@
 
 <script>
   (function () {
+    var reveals = document.querySelectorAll('.reveal');
+
+    if (!('IntersectionObserver' in window)) {
+      reveals.forEach(function (el) { el.classList.add('in-view'); });
+    } else {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      reveals.forEach(function (el) { revealObserver.observe(el); });
+    }
+
     var target = document.getElementById('venn-section');
     if (!target) return;
 
